@@ -51,4 +51,7 @@ def h1(s):
 def h3(s):
     # implement this function
     board, _, _ = s
-    return 0
+    goal=(1,2,3,4,5,6,7,8,0)
+    res = 0
+    for i in enumerate(board):
+    return res
