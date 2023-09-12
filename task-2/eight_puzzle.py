@@ -51,7 +51,13 @@ def h1(s):
 def h3(s):
     # implement this function
     board, _, _ = s
-    goal=(1,2,3,4,5,6,7,8,0)
-    res = 0
-    for i in enumerate(board):
-    return res
+    target_state = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
+    h_value = 0
+
+    for i in range(3):
+        for j in range(3):
+            if node_state[i][j] != 0:
+                target_row, target_col = divmod(node_state[i][j] - 1, 3)
+                h_value += abs(i - target_row) + abs(j - target_col)
+    
+    return h_value
